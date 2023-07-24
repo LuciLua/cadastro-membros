@@ -1,5 +1,5 @@
-### 📽️ Cadastro de Membros
-#### Sistema CRUD para gerenciamento de membros em um time de produção audiovisual
+# 📽️ Member Registration
+#### CRUD system for managing members in an audiovisual production team
 
 ---
 
@@ -11,51 +11,51 @@
 
 ##### Backend:
 
-[x] - Criar membro (C)
+- [x] Create member (C)
 
-[x] - Ler arquivo de membros (R)
+- [x] Read members file (R)
 
-[ ] - Atualizar membro (U)
+- [ ] Update member (U)
 
-[ ] - Deletar membro (D)
+- [ ] Delete member (D)
 
 
 #### Frontend:
 
-[x] - Form: Criar membro
+- [x] Form: Create member
 
-[x] - Form: Inserir função para membro (update)
+- [x] Form: Insert function for member (update)
 
-[x] - Mostrar membros na tabela
+- [x] Show members in table
 
-[ ] - Button: Deletar membro (created but doesn't work yet)
+- [ ] Button: Delete member (created but doesn't work yet)
 
-[ ] - Button: Modificar membro (created but doesn't work yet)
+- [ ] Button: Modify member (created but doesn't work yet)
 
-[ ] - Component [header] - Com toggle entre forms
+- [ ] Component [header] - With toggle between forms
 
-[ ] - Tabela de funções e atribuições  
+- [ ] Table of roles and assignments
 
 
 ### 🔥 Start:
 
 
-> clone esse repositorio
+> clone this repository
 ```bash
 git clone https://github.com/LuciLua/cadastro-membros
 ```
 
-> instale as dependencias
+> install the dependencies
 ```bash
     yarn
 ```
 
-> inicie o servidor (backend)
+> start the server (backend)
 ```bash
     yarn server
 ```
 
-> inicie o servidor (frontend) - nao funciona ainda - (use o live server do vs code ou use o site por enquanto: https://cadastro-membros.vercel.app/)
+> start the server (frontend) - it doesn't work yet - (use vs code's live server or use the website for now: https://cadastro-members.vercel.app/)
 ```bash
     yarn start
 ```
