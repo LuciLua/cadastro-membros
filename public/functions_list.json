@@ -1,0 +1,64 @@
+{
+    "functions": [
+        {
+            "name": "diretor",
+            "pos": false
+        },
+        {
+            "name": "assistente de direcao",
+            "pos": false
+        },
+        {
+            "name": "produtor",
+            "pos": false
+        },
+        {
+            "name": "assistente de produção",
+            "pos": false
+        },
+        {
+            "name": "direcao de fotografia",
+            "pos": false
+        },
+        {
+            "name": "assistente de fotografia",
+            "pos": false
+        },
+        {
+            "name": "assistente de camera",
+            "pos": false
+        },
+        {
+            "name": "direcao de arte",
+            "pos": false
+        },
+        {
+            "name": "assistente de arte",
+            "pos": false
+        },
+        {
+            "name": "direcao de som",
+            "pos": false
+        },
+        {
+            "name": "assistente de som",
+            "pos": false
+        },
+        {
+            "name": "montagem",
+            "pos": true
+        },
+        {
+            "name": "sound designer mixagem",
+            "pos": true
+        },
+        {
+            "name": "color grading",
+            "pos": true
+        },
+        {
+            "name": "finalizacao",
+            "pos": true
+        }
+    ]
+}

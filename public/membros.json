@@ -1,0 +1,19 @@
+{
+  "membros": [
+    {
+      "fullname": "Lúcia Maria Rosa Guelber",
+      "shortname": "Luci Lua",
+      "tel": "32999639490",
+      "email": "luci.lua81@gmail.com",
+      "alimentacao": "como carne",
+      "alimentacao_lactose": "nao",
+      "funcoes": [
+        {
+          "primary_function": "diretor",
+          "secondary_function": "produtor",
+          "pos_producao": "finalizacao"
+        }
+      ]
+    }
+  ]
+}

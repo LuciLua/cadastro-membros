@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Membros</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script defer src="main.js" type="module"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" id="form1">
+            <h1>Cadastro de Membros</h1>
+            <label for="fullname">Nome Completo</label>
+            <input type="text" title="fullname" name="fullname" />
+            <label for="shortname">Nome (para creditos)</label>
+            <input type="text" title="shortname" name="shortname" />
+            <label for="tel">Celular</label>
+            <input type="text" title="tel" name="tel" />
+            <label for="email">Email</label>
+            <input type="email" title="email" name="email" />
+            <label for="alimentacao">Alimentação</label>
+            <select id="alimentacao" name="alimentacao">
+                <option value="como carne">Como carne</option>
+                <option value="vegetariano">Vegetariano</option>
+                <option value="vegano">Vegano</option>
+            </select>
+            <label for="alimentacao_lactose">Alimentação (intolerancia lactose ou alergia)</label>
+            <select id="alimentacao_lactose" name="alimentacao_lactose">
+                <option value="nao">Nao tenho</option>
+                <option value="sim">Sim, tenho intolerancia (ou alergia)</option>
+            </select>
+            <button>Cadastrar membro</button>
+        </form>
+        <form action="" id="form2">
+            <h1>Cadastro de Funções por membros</h1>
+            <label for="name">Nome</label>
+            <select id="name">
+                <option value="Nenhum">Nenhum</option>
+            </select>
+            <label for="primary_function">Função Primária</label>
+            <select id="primary_function" class="functions">
+                <option value="nenhuma">Nenhuma</option>
+            </select>
+            <label for="secondary_function">Função Secundária</label>
+            <select id="secondary_function" class="functions">
+                <option value="nenhuma">Nenhuma</option>
+            </select>
+            <label for="pos_producao">Pós produção</label>
+            <select id="pos_producao">
+                <option value="nenhuma">Nenhuma</option>
+            </select>
+            <button>Cadastrar Função para membro</button>
+        </form>
+    </div>
+</body>
+
+</html>
