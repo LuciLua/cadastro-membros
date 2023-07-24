@@ -19,10 +19,14 @@ body{
     display: flex;
     gap: 10px;
     margin: 10px;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }
 
 
-form{
+form, .list_members_container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +39,7 @@ form{
     gap: 5x;
 }
 
-form h1{
+form h1, .list_members_container h1{
     color: #101010;
     z-index: 10;
     position: relative;
@@ -46,7 +50,7 @@ form h1{
     width: 100%;
 }
 
-form h1::after{
+form h1::after, .list_members_container h1::after{
     content: '';
     width: 100%;
     height: 1px;
@@ -93,4 +97,56 @@ form button{
 
 form button:hover{
     background-color: #4936de;
+}
+
+.list_members_container{
+    margin-bottom: 20dvh;
+    width: 100%;
+    max-width: 700px;
+
+    position: relative;
+}
+
+.list_members_container ul.list_members{
+    list-style: none;
+    width: 100%;
+
+}
+.list_members_container ul.list_members li{
+    border-bottom: #4936de 1px solid;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_members_container ul.list_members li details{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.list_members_container ul.list_members li details p{
+    color: #101010;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.list_members_container ul.list_members li .btn_container{
+    gap: 5px;
+    display: flex;
+}
+
+.list_members_container ul.list_members li .btn_container button{
+    border: none;
+    background-color: #4936de;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 500;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
 }

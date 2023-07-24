@@ -34,18 +34,21 @@ app.get('/functions', (req, res) => {
   });
 })
 
-let currentId = 1
+function generateRandomHexString(length) {
+  const characters = 'abcdef0123456789';
+  let result = '';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 
 app.post('/membro', (req, res) => {
   const membro_submited_by_form = req.query
-  // const id = currentId++
-  // let novo = JSON.parse(membro_submited_by_form)
-  // novo.push("aaa")
-  // novo = JSON.stringify(novo)
-  // membro_submited_by_form = novo
-
-  console.log("POST: membro")
-
+  let currentId = generateRandomHexString(20)
+  membro_submited_by_form.id = currentId
+  console.log(membro_submited_by_form)
 
   if (!membro_submited_by_form || typeof membro_submited_by_form !== 'object') res.status(400).json({ error: "Query com parametros inválidos" })
   fs.readFile('./public/membros.json', 'utf-8', (err, data) => {
@@ -59,27 +62,32 @@ app.post('/membro', (req, res) => {
         if (err) { console.error('erro ao escrever no arquivo', err); return res.status(500).json({ error: 'erro ao escrever no arquivo' }) }
         console.log('Arquivo escrito com sucesso!'); return res.status(200).json({ message: 'Arquivo escrito com sucesso!' })
       })
+
     } catch (parseError) { console.error('erro no parse', parseError); return res.status(500).json({ error: 'erro no parse' }) }
   })
 });
 
-// app.put('/membros', (req, res) => {
-//   const membro_submited_by_form = req.query
-//   if (!membro_submited_by_form || typeof membro_submited_by_form !== 'object') res.status(400).json({ error: "Query com parametros inválidos" })
 
-//   fs.readFile('./public/membros.json', 'utf-8', (err, data) => {
-//     if (err) { console.error('erro ao ler o arquivo', err); return res.status(500).json({ error: 'erro ao ler o arquivo' }) }
-//     try {
-//       const json_membros_to_object = JSON.parse(data)
-//       json_membros_to_object.membros.push(membro_submited_by_form)
-//       const object_membros_to_json = JSON.stringify(json_membros_to_object, null, 2)
+app.get('/membro/:id', (req, res) => {
+  const membro_submited_by_form = req.query
+  // console.log(membro_submited_by_form.id)
 
-//       fs.writeFile('./public/membros.json', object_membros_to_json, 'utf-8', (err) => {
-//         if (err) { console.error('erro ao escrever no arquivo', err); return res.status(500).json({ error: 'erro ao escrever no arquivo' }) }
-//         console.log('Arquivo escrito com sucesso!'); return res.status(200).json({ message: 'Arquivo escrito com sucesso!' })
-//       })
-//     } catch (parseError) { console.error('erro no parse', parseError); return res.status(500).json({ error: 'erro no parse' }) }
-//   })
-// });
+  if (!membro_submited_by_form || typeof membro_submited_by_form !== 'object') res.status(400).json({ error: "Query com parametros inválidos" })
+
+  fs.readFile('./public/membros.json', 'utf-8', (err, data) => {
+    if (err) { console.error('erro ao ler o arquivo', err); return res.status(500).json({ error: 'erro ao ler o arquivo' }) }
+    try {
+
+      const membro_id = req.params.id
+      const json_membros_to_object = JSON.parse(data)
+      const filtered = json_membros_to_object.membros.find(membro => {
+        return membro.id === membro_id
+      })
 
 
+      res.json({membro: filtered})
+      console.log("User was found")
+
+    } catch (parseError) { console.error('erro no parse', parseError); return res.status(500).json({ error: 'erro no parse' }) }
+  })
+});
