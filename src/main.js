@@ -58,7 +58,7 @@ document.getElementById('form1').addEventListener('submit', function (event) {
 
     // Criar uma URL com os parâmetros do formulário
     const urlParams = new URLSearchParams(data).toString();
-    const url = `http://localhost:3000/membros?${urlParams}`;
+    const url = `http://localhost:3000/membro?${urlParams}`;
 
     // Enviar a requisição POST usando Fetch com a URL criada
     fetch(url, {

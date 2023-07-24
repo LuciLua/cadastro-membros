@@ -20,6 +20,7 @@ app.get('/membros', (req, res) => {
   fs.readFile('./public/membros.json', 'utf-8', (err, data) => {
     if (err) { console.error('erro ao ler arquivo', err); return res.status(500).json({ error: "erro ao ler arquivo" }); }
     const membrosList = JSON.parse(data)
+    console.log("GET: membros")
     return res.status(200).send(membrosList)
   });
 })
@@ -28,6 +29,7 @@ app.get('/functions', (req, res) => {
   fs.readFile('./public/functions_list.json', 'utf-8', (err, data) => {
     if (err) { console.error('erro ao ler arquivo', err); return res.status(500).json({ error: "erro ao ler arquivo" }); }
     const functions_list = JSON.parse(data)
+    console.log("GET: functions")
     return res.status(200).send(functions_list)
   });
 })
@@ -35,12 +37,15 @@ app.get('/functions', (req, res) => {
 let currentId = 1
 
 app.post('/membro', (req, res) => {
-  let membro_submited_by_form = req.query
-  const id = currentId++
-  let novo = JSON.parse(membro_submited_by_form)
-  novo.push("aaa")
-  novo = JSON.stringify(novo)
-  membro_submited_by_form = novo
+  const membro_submited_by_form = req.query
+  // const id = currentId++
+  // let novo = JSON.parse(membro_submited_by_form)
+  // novo.push("aaa")
+  // novo = JSON.stringify(novo)
+  // membro_submited_by_form = novo
+
+  console.log("POST: membro")
+
 
   if (!membro_submited_by_form || typeof membro_submited_by_form !== 'object') res.status(400).json({ error: "Query com parametros inválidos" })
   fs.readFile('./public/membros.json', 'utf-8', (err, data) => {
